@@ -1,0 +1,7 @@
+module.exports = {
+    consumer_key: '',
+    consumer_secret: '',
+    access_token: '2584161750-',
+    access_token_secret: '',
+    nodeport: '3000'
+};

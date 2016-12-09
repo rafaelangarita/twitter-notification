@@ -1,0 +1,13 @@
+{
+    "name": "twitter-notifier",
+    "description": "A Twitter Direct Message notifier",
+    "version": "0.0.1",
+    "main": "server.js",
+    "dependencies": {
+        "underscore":"1.8.x",
+        "express": "4.14.x",
+        "morgan": "1.7.x",
+        "body-parser": "1.15.x",
+        "twit": "2.2.x"
+    }
+}
