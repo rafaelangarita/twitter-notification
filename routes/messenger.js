@@ -22,19 +22,33 @@ twit = new Twit({
 exports.sendMessage = function(req, res) {
 
     var dmParams = {
-            screen_name: req.body.username,
-            text: req.body.message
-        }
-        // post a direct message from the sender's account
+        screen_name: req.body.username,
+        text: req.body.message
+    }
+    var reply = sendDirectMessage(dmParams);
+
+    res.send(reply);
+}
+
+exports.sendDirectMessage = function(twitterUsername, message) {
+    var dmParams = {
+        screen_name: twitterUsername,
+        text: message
+    }
+    sendDirectMessage(dmParams);
+}
+
+function sendDirectMessage(dmParams) {
+    // post a direct message from the sender's account
     twit.post('direct_messages/new', dmParams, function(err, reply) {
         if (err) {
             console.log(err);
-            res.send(err);
+            return err;
         } else {
             console.log(reply.id_str);
             console.log(reply.text);
-            res.send(reply.id_str);
 
+            return reply.id_str;
         }
-    })
+    });
 }
