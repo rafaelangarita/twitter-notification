@@ -8,6 +8,7 @@
         "express": "4.14.x",
         "morgan": "1.7.x",
         "body-parser": "1.15.x",
-        "twit": "2.2.x"
+        "twit": "2.2.x",
+        "winston": "2.3.1" 
     }
 }
